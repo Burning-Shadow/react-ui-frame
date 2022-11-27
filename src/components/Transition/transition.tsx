@@ -10,7 +10,7 @@ type TransitionProps = CSSTransitionProps & {
   children?: React.ReactNode,
 }
 
-const Transition: React.FC<TransitionProps> = (props) => {
+export const Transition: React.FC<TransitionProps> = (props) => {
   const { children, classNames, animation, wrapper, ...resetProps } = props;
 
   return (
