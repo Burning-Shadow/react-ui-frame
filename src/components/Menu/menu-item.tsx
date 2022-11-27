@@ -4,9 +4,12 @@ import { MenuContext } from './menu';
 
 
 export interface MenuItemProps {
+  /**选项扩展的 className */
   className?: string;
+  /**选项是否被禁用 */
   disabled?: boolean;
   index?: string;
+  /**选项的自定义 style */
   style?: React.CSSProperties;
   children?: React.ReactNode;
 };
