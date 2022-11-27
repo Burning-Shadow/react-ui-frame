@@ -1,9 +1,13 @@
 import Button from "./botton";
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+// import mdx from './button.mdx'; // TODO 此处的 mdx 不知为何无法解析，故自定义页面暂时无法处理，后续研究下
 
 const buttonMeta: ComponentMeta<typeof Button> = {
-  title: 'Button',
+  title: 'Component Button',
   component: Button,
+  parameters: {
+    // doc: { page: mdx },
+  }
 };
 
 export default buttonMeta;
@@ -14,6 +18,8 @@ const Template: ComponentStory<typeof Button> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = { children: 'Default Button' };
+// Decorators 支持自定义生成的 Story
+Default.decorators = [(Story) => (<div style={{ margin: '50px' }}><Story /></div>)];
 // Default.storyName = '默认按钮样式';
 
 export const Large = Template.bind({});
