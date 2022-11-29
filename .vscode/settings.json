@@ -2,5 +2,13 @@
   "eslint.validate": [
     "javascript",
     "javascriptreact"
-  ]
+  ],
+  "vetur.format.defaultFormatterOptions": {
+    "prettier": {
+      "semi": false,
+      "singleQuote": true
+    }
+  },
+  "prettier.singleQuote": true,
+  "prettier.semi": false
 }
