@@ -13,7 +13,7 @@ interface GithubUserProps {
 };
 
 export default {
-  title: 'Component AutoComplete',
+  title: 'AutoComplete',
   component: AutoComplete,
   id: 'AutoComplete',
   parameters: {

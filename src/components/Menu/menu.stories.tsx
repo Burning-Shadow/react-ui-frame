@@ -4,7 +4,7 @@ import MenuItem from './menu-item';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 const menuMeta: ComponentMeta<typeof Menu> = {
-  title: 'Component Menu',
+  title: 'Menu',
   id: 'Menu',
   component: Menu,
   subcomponents: {

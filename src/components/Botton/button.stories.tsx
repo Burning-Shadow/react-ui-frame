@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 // import mdx from './button.mdx'; // TODO 此处的 mdx 不知为何无法解析，故自定义页面暂时无法处理，后续研究下
 
 const buttonMeta: ComponentMeta<typeof Button> = {
-  title: 'Component Button',
+  title: 'Button',
   component: Button,
   parameters: {
     // doc: { page: mdx },
