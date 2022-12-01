@@ -1,5 +1,8 @@
 import { useState, useReducer } from 'react';
 import Schema, { RuleItem, ValidateError } from 'async-validator';
+
+// 将引入方式改为下方的按目录引用，以此减小 umd 的打包压缩体积
+// import { each, mapValues } from 'lodash-es';
 import mapValues from 'lodash-es/mapValues';
 import each from 'lodash-es/each';
 

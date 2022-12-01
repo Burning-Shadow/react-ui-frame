@@ -39,4 +39,9 @@ import 'react-ui-frame/build/index.css';
 <!-- package.json 中的 prepublish 会在 npm install 和 npm publish 前均会运行，故 scripts 中的关键字需改为 prepublish-Only -->
 
 <!-- 正常 push 即可触发【地址为 https://app.travis-ci.com/github/Burning-Shadow/react-ui-frame】 -->
+
+<!-- 在更新 .travis.yml 后
+注意 github_token 变量需要和 setting 中的 `Personal access tokens`
+【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】 对应 
+-->
 ```

@@ -2,8 +2,9 @@
   "name": "react-ui-frame",
   "version": "0.1.0",
   "private": true,
-  "main": "build/index.js",
-  "module": "build/index.js",
+  "main": "build/index.es.js",
+  "module": "build/index.es.js",
+  "unpkg": "dist/inde.umd.js",
   "types": "build/index.d.ts",
   "scripts": {
     "start": "react-scripts start",
@@ -14,10 +15,13 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "clean": "rimraf ./build",
-    "build": "npm run clean && npm run build-css && npm run build-ts",
+    "build": "npm run clean && npm run build-es && npm run build-umd",
+    "build-webpack-es": "npm run clean && npm run build-css && npm run build-ts",
     "build-ts": "tsc -p tsconfig.build.json",
     "build-css": "node-sass ./src/styles/index.scss ./build/index.css",
-    "prepublishOnly": "npm run test:nowatch && npm run lint && npm run build"
+    "prepublishOnly": "npm run test:nowatch && npm run lint && npm run build",
+    "build-es": "rimraf ./dist && rollup --config rollup/rollup.esm.config.js",
+    "build-umd": "rimraf ./dist && rollup --config rollup/rollup.umd.config.js"
   },
   "jest": {
     "moduleNameMapper": {
@@ -70,6 +74,10 @@
     "react-transition-group": "^4.4.5"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^23.0.3",
+    "@rollup/plugin-json": "^5.0.2",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-replace": "^5.0.1",
     "@storybook/addon-actions": "^6.5.13",
     "@storybook/addon-essentials": "^6.5.13",
     "@storybook/addon-interactions": "^6.5.13",
@@ -102,6 +110,10 @@
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "rimraf": "^3.0.2",
+    "rollup-plugin-exclude-dependencies-from-bundle": "^1.1.23",
+    "rollup-plugin-sass": "^1.12.16",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.34.1",
     "typescript": "^4.9.3",
     "web-vitals": "^2.1.4",
     "webpack": "^5.75.0"
