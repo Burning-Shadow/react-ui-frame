@@ -31,3 +31,12 @@ import 'react-ui-frame/build/index.css';
 
 <!-- 4. 执行 npm run build-storybook，生成静态文件，可直接上传至文档网站 -->
 ```
+
+### CI-CD
+```
+<!-- 在 travis-ci.com 中绑定自身项目【开源项目免费使用】 -->
+
+<!-- package.json 中的 prepublish 会在 npm install 和 npm publish 前均会运行，故 scripts 中的关键字需改为 prepublish-Only -->
+
+<!-- 正常 push 即可触发【地址为 https://app.travis-ci.com/github/Burning-Shadow/react-ui-frame】 -->
+```

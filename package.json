@@ -17,7 +17,7 @@
     "build": "npm run clean && npm run build-css && npm run build-ts",
     "build-ts": "tsc -p tsconfig.build.json",
     "build-css": "node-sass ./src/styles/index.scss ./build/index.css",
-    "prepublish": "npm run test:nowatch && npm run lint && npm run build"
+    "prepublishOnly": "npm run test:nowatch && npm run lint && npm run build"
   },
   "jest": {
     "moduleNameMapper": {
