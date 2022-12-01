@@ -19,3 +19,15 @@ import 'react-ui-frame/build/index.css';
 <!-- 4. 为保证 react 版本一致，还需在 react-ui-frame 根目录下执行 npm link ../ui-frame-test/node_modules/react，而后重启 ui-frame-test -->
 <!-- Ps: 这只是调试的权宜之计，真正处理还需在 publish 的过程中 -->
 ```
+
+### 上传发布包
+#### 准备工作
+```
+<!-- 1. 依赖需要进行控制，也就是 package.json 文件中将不必要的内容，诸如 @types/xxx、react-script 等均移入 devDependencies 中，减小体积 -->
+
+<!-- 2. package.json 中增加 peerDependencies 项目，将前置依赖项放入【Ps: 移动的部分需增加至 devDependencies 中，保证开发时的正常使用】 -->
+
+<!-- 3. 增加 welcome.stories.tsx，使得页面重定向位置改变 -->
+
+<!-- 4. 执行 npm run build-storybook，生成静态文件，可直接上传至文档网站 -->
+```

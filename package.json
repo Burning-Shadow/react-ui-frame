@@ -5,48 +5,29 @@
   "main": "build/index.js",
   "module": "build/index.js",
   "types": "build/index.d.ts",
+  "scripts": {
+    "start": "react-scripts start",
+    "test": "react-scripts test",
+    "test:nowatch": "cross-env CI=true react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint --ext js,ts,tsx src --max-warnings 5",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public",
+    "clean": "rimraf ./build",
+    "build": "npm run clean && npm run build-css && npm run build-ts",
+    "build-ts": "tsc -p tsconfig.build.json",
+    "build-css": "node-sass ./src/styles/index.scss ./build/index.css",
+    "prepublish": "npm run test:nowatch && npm run lint && npm run build"
+  },
   "jest": {
     "moduleNameMapper": {
       "axios": "axios/dist/node/axios.cjs"
     }
   },
-  "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.2.1",
-    "@fortawesome/free-solid-svg-icons": "^6.2.1",
-    "@fortawesome/react-fontawesome": "^0.2.0",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/classnames": "^2.3.1",
-    "@types/jest": "^27.5.2",
-    "@types/lodash-es": "^4.17.6",
-    "@types/node": "^16.18.3",
-    "@types/react": "^18.0.25",
-    "@types/react-dom": "^18.0.9",
-    "@types/react-transition-group": "^4.4.5",
-    "async-validator": "^4.2.5",
-    "axios": "^1.2.0",
-    "classnames": "^2.3.2",
-    "lodash-es": "^4.17.21",
-    "node-sass": "^7.0.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "react-transition-group": "^4.4.5",
-    "typescript": "^4.9.3",
-    "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public",
-
-    "clean": "rimraf ./build",
-    "build": "npm run clean && npm run build-css && npm run build-ts",
-    "build-ts": "tsc -p tsconfig.build.json",
-    "build-css": "node-sass ./src/styles/index.scss ./build/index.css"
+  "husky": {
+    "hooks": {
+      "pre-commit": ""
+    }
   },
   "eslintConfig": {
     "extends": [
@@ -76,6 +57,18 @@
       "last 1 safari version"
     ]
   },
+  "peerDependencies": {
+    "react": ">=18.2.0",
+    "react-dom": ">=18.2.0"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.2.1",
+    "@fortawesome/free-solid-svg-icons": "^6.2.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "axios": "^1.2.0",
+    "classnames": "^2.3.2",
+    "react-transition-group": "^4.4.5"
+  },
   "devDependencies": {
     "@storybook/addon-actions": "^6.5.13",
     "@storybook/addon-essentials": "^6.5.13",
@@ -87,10 +80,30 @@
     "@storybook/preset-create-react-app": "^4.1.2",
     "@storybook/react": "^6.5.13",
     "@storybook/testing-library": "^0.0.13",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/classnames": "^2.3.1",
+    "@types/jest": "^27.5.2",
+    "@types/lodash-es": "^4.17.6",
+    "@types/node": "^16.18.3",
     "@types/node-sass": "^4.11.3",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.9",
+    "@types/react-transition-group": "^4.4.5",
+    "async-validator": "^4.2.5",
     "babel-plugin-named-exports-order": "^0.0.2",
+    "cross-env": "^7.0.3",
+    "husky": "^8.0.2",
+    "lodash-es": "^4.17.21",
+    "node-sass": "^7.0.3",
     "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
     "rimraf": "^3.0.2",
+    "typescript": "^4.9.3",
+    "web-vitals": "^2.1.4",
     "webpack": "^5.75.0"
   }
 }
